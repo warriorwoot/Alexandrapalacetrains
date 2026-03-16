@@ -1,52 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Alexandra Palace Train Board</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: larger; 
-            margin: 0;
-            padding: 0;
-        }
-        .train-board {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        #trainData {
-            margin-top: 20px;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var app_id = '1ca82c19';
-            var app_key = '3c36da9b424a0b2cff9d861fbb62503e';
-            var url = `https://api.example.com/trainboard?app_id=${app_id}&app_key=${app_key}`;
-            $.get(url, function (data) {
-                // Process and display the train data
-                $('#trainData').html(JSON.stringify(data)); // Placeholder to display data
-            });
-            // Request fullscreen on load
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            }
-        });
-    </script>
+    <title>Transport Data</title>
 </head>
 <body>
-    <div class="train-board">
-        <h1>Alexandra Palace Train Board</h1>
-        <div id="trainData">Loading train data...</div>
-    </div>
+    <h1>Alexandra Palace Transport Data</h1>
+    <p>Fetching transport data from the Transport API...</p>
+    <script>
+        const endpoint = 'https://api.transportapi.com/v3/uk/train/station/alexandra_palace.json';
+        // Add your code to fetch and handle the data
+    </script>
 </body>
 </html>
