@@ -5,9 +5,25 @@
 <body>
     <h1>Alexandra Palace Transport Data</h1>
     <p>Fetching transport data from the Transport API...</p>
+    <div id="data-container"></div>
     <script>
         const endpoint = 'https://api.transportapi.com/v3/uk/train/station/alexandra_palace.json';
-        // Add your code to fetch and handle the data
+        
+        fetch(endpoint)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Transport API Data:', data);
+                document.getElementById('data-container').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('data-container').innerHTML = '<p>Error: ' + error.message + '</p>';
+            });
     </script>
 </body>
 </html>
