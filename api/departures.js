@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     try {
         const response = await fetch(
-            'https://api.transportapi.com/v3/uk/train/station/alexandra_palace/live.json',
+            'https://api.transportapi.com/v1/live/train/station/alexandra_palace',
             {
                 headers: {
                     Authorization: `Bearer ${process.env.API_KEY}`
