@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     try {
         const response = await fetch(
-            'https://api.transportapi.com/v1/live/train/station/alexandra_palace',
+            'https://api.transportapi.com/v1/uk/train/station/alexandra-palace/live.json',
             {
                 headers: {
                     Authorization: `Bearer ${process.env.API_KEY}`
@@ -15,7 +15,6 @@ export default async function handler(req, res) {
 
         const data = await response.json();
         res.status(200).json(data);
-
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
